@@ -14,5 +14,5 @@ public class EstudianteDTO {
     private String nombres;
     private String apellidos;
     private String dni;
-    private String edad;
+    private Integer edad;
 }

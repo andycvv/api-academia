@@ -16,5 +16,5 @@ public class Estudiante {
     private String nombres;
     private String apellidos;
     private String dni;
-    private String edad;
+    private Integer edad;
 }

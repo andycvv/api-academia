@@ -24,14 +24,17 @@ public class WebSecurityConfig {
                 .csrf(ServerHttpSecurity.CsrfSpec::disable)
                 .formLogin(ServerHttpSecurity.FormLoginSpec::disable)
                 .authorizeExchange(e -> e
-                    .pathMatchers("/auth/**").permitAll()
+                        .pathMatchers("/swagger-ui/**",
+                                "/v3/api-docs/**",
+                                "/swagger-ui.html").permitAll()
+                        .pathMatchers("/auth/**").permitAll()
                         .pathMatchers("/cursos/**",
                                 "/v2/cursos/**").hasAnyAuthority("ADMIN")
                         .pathMatchers("/estudiantes/**",
                                 "/v2/estudiantes/**").hasAnyAuthority("ADMIN")
                         .pathMatchers("/matriculas/**",
                                 "/v2/matriculas/**").hasAnyAuthority("USER")
-                    .anyExchange().authenticated()
+                        .anyExchange().authenticated()
                 )
                 .authenticationManager(authenticationManager)
                 .securityContextRepository(securityContextRepository)

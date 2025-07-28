@@ -2,7 +2,7 @@ package com.academia.dto;
 
 import jakarta.validation.constraints.Min;
 import jakarta.validation.constraints.NotBlank;
-import jakarta.validation.constraints.Null;
+import jakarta.validation.constraints.NotNull;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -18,7 +18,7 @@ public class EstudianteCreacionDTO {
     private String apellidos;
     @Length(min = 8, max = 8, message = "El campo DNI debe tener 8 dígitos")
     private String dni;
-    @NotBlank(message = "El campo Edad es obligatorio")
+    @NotNull(message = "La edad es obligatoria")
     @Min(value = 5, message = "El campo Edad debe ser como mínimo 5")
-    private String edad;
+    private Integer edad;
 }

@@ -6,7 +6,7 @@ Este proyecto es una API reactiva desarrollada con **Spring Boot WebFlux** y Mon
 
 ## 🔧 Tecnologías y Herramientas
 
-- Java 17
+- Java 21
 - Spring Boot 3.3.x
    - Spring WebFlux
    - Spring Data Reactive MongoDB
